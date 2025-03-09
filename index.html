@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机古诗词生成器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <canvas id="starCanvas"></canvas>
+    <div class="container">
+        <header>
+            <h1>诗词随机生成</h1>
+            <button id="themeToggle">🌓 切换主题</button>
+        </header>
+        
+        <div class="poem-container">
+            <div class="poem-header">
+                <h2 id="poemTitle">《诗经·关雎》</h2>
+                <p id="poemAuthor">佚名</p>
+            </div>
+            <div id="poemContent" class="poem-content"></div>
+        </div>
+
+        <div class="button-container">
+          <button id="generateBtn">Next</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

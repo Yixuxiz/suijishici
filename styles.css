@@ -1,0 +1,191 @@
+/* 基础样式 */
+:root {
+  --font-ming: 'HuWenMingChao', sans-serif;
+}
+
+@font-face {
+  font-family: 'HuWenMingChao';
+  src: url('汇文明朝体.otf') format('opentype');
+}
+
+body {
+  font-family: var(--font-ming);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 明暗主题变量 */
+[data-theme="light"] {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --container-bg: #fff;
+  --btn-bg: #4CAF50;
+  --btn-hover: #45a049;
+}
+
+[data-theme="dark"] {
+  --bg-color: #2c2c2c;
+  --text-color: #e0e0e0;
+  --container-bg: #3d3d3d;
+  --btn-bg: #689f38;
+  --btn-hover: #558b2f;
+}
+
+/* 布局样式 */
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+#starCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+[data-theme='dark'] .container {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.poem-container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+}
+
+/* 文字样式 */
+#poemTitle {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  animation: titleEntrance 0.8s ease-out;
+}
+
+@keyframes titleEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#poemAuthor {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.poem-content {
+  font-size: 1.4rem;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+}
+
+.button-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+}
+
+#generateBtn {
+  width: auto;
+  padding: 0.8rem 2rem;
+}
+
+/* 主题切换按钮 */
+#themeToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+/* 新增手机端适配 */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  
+  #poemTitle {
+    font-size: 1.8rem;
+  }
+  
+  .poem-content {
+    font-size: 1.2rem;
+  }
+  
+  #themeToggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 1rem 0;
+  }
+  
+  .button-container {
+    justify-content: flex-end;
+  }
+
+  #generateBtn {
+    width: auto;
+  }
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  background: var(--container-bg);
+}
+
+button {
+  background: var(--btn-bg);
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
